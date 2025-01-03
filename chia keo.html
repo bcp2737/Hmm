@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tứ đại chia kẹo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            color: #333;
+            transition: background 0.3s;
+        }
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #003366;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+        h1:hover, h2:hover, h3:hover {
+            color: #0056b3;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .math-formula {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+    <script>
+        window.MathJax = {
+            tex: {inlineMath: [['$', '$'], ['\', '\']]},
+            svg: {fontCache: 'global'}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Các bài toán chia kẹo</h1>
+        <p>Các bài toán chia kẹo trong tổ hợp</p>
+    </header>
+    <main>
+        <h2>Các công thức chia kẹo</h2>
+        <p><strong>Cách chia n cái kẹo khác nhau cho k hộp khác nhau:</strong></p>
+        <div class="math-formula">
+\[
+            k^n
+\]
+        </div>
+
+        <p><strong>Chia kẹo Euler (cách chia n cái kẹo giống nhau cho k hộp khác nhau):</strong></p>
+        <div class="math-formula">
+\[
+            C_{n+k-1}^{k-1}
+\]
+        </div>
+
+        <p><strong>Số Stirling loại 2 (cách chia n cái kẹo khác nhau vào k hộp giống nhau, không hộp nào rỗng):</strong></p>
+        <div class="math-formula">
+\[
+            S(n, k) = \frac{1}{k!} \sum_{i=0}^{k} (-1)^i \binom{k}{i} (k-i)^n
+\]
+        </div>
+
+        <p><strong>Cách chia n cái kẹo giống nhau vào k hộp giống nhau:</strong></p>
+        <div class="math-formula">
+\[
+            p_k(n) = \sum_{i=0}^k (-1)^i \binom{k}{i} p(n - i \cdot k),
+\]
+        </div>
+        <p>Trong đó:</p>
+        <ul>
+            <li>p(n): Số phân hoạch không hạn chế của n.</li>
+            <li>Hàm sinh của số phân hoạch là:</li>
+        </ul>
+        <div class="math-formula">
+\[
+            P(x) = \prod_{k=1}^\infty \frac{1}{1 - x^k},
+\]
+        </div>
+        <p>Hệ số của x^n trong khai triển của P(x) chính là p(n).</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 bcp2737</p>
+    </footer>
+</body>
+</html>
